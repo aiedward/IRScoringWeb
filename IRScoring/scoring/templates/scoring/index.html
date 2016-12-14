@@ -8,19 +8,17 @@
     <form action="/scoring/add/" method="post" enctype="text/plain">
         {% csrf_token %}
         <table>
-            <tr>
-                <td> <label for="ID">請輸入學號</label> </td>
-                <td> <input id="ID" type="text" name="ID"> </td>
-            </tr>
+                <tr>
+                    <td> {{form.Std_ID.label}} </td>
+                    <td> {{form.Std_ID}} </td>
+                </tr>
 
-            <tr>
-                <td> <label for="content">請輸入json字串</label> </td>
-                <td>
-                    <textarea id="content" rows="10" cols="48" name="content"></textarea>
-                </td>
-            </tr>
-        </table>
-        <input type="hidden" name="ok" value="yes">
+                <tr>
+                    <td> {{form.Json_Str.label}} </td>
+                    <td> {{form.Json_Str}} </td>
+                </tr>
+            </table>
+
         <input type="submit" value="提交">
     </form>
 </body>
