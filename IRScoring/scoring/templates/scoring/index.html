@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>submitting</title>
+</head>
+<body>
+    <form action="/scoring/add/" method="post" enctype="text/plain">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td> <label for="ID">請輸入學號</label> </td>
+                <td> <input id="ID" type="text" name="ID"> </td>
+            </tr>
+
+            <tr>
+                <td> <label for="content">請輸入json字串</label> </td>
+                <td>
+                    <textarea id="content" rows="10" cols="48" name="content"></textarea>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="ok" value="yes">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>分數列表</h2>
+        <table>
+            <tr>
+                <th>學號</th>
+                <th>得分</th>
+                <th>Json</th>
+
+            </tr>
+            {% for r in all_result %}
+                <tr>
+                    <td> {{ r.StdID }} </td>
+                    <td> {{ r.Score }} </td>
+                    <td> {{ r.Json_Str }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>
