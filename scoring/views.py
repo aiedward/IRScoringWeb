@@ -18,7 +18,7 @@ class Scoring(object):
 		index = 0
 		for i in self.answer:
 			if self.stuAnswer[index] == i:
-				self.score+=1
+				self.score+=5
 			index+=1
 		self._record()
 

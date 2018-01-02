@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+        <table class="table table-striped">
+            <thead>    
+                <tr>
+                    <th>學號</th>
+                    <th>得分</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for r in all_result %}
+                    <tr>
+                        <td> {{ r.StdID }} </td>
+                        <td> {{ r.Score }} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>

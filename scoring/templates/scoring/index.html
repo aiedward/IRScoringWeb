@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>submitting</title>
+
+    <!-- loads the path to the static files -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'scoring/style.css' %}">
+
+</head>
+<body>
+  <!--   <form action="/scoring/add/" method="post" enctype="text/plain">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td> {{form.Std_ID.label}} </td>
+                <td> {{form.Std_ID}} </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="提交">
+    </form> -->
+  <div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>資訊檢索 <br> Final Project <br> 評分系統</h1>
+      </div>
+
+      <div class="login-form">
+
+        <form class="ui form" action="" method="post">
+        {% csrf_token %}
+          <div class="control-group">
+            <input type="" name="studentID" placeholder="請輸入學號">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+          </div>
+
+          <div class="control-group">
+          <input type="" name="answer" placeholder="請輸入JSON答案">
+          <label class="login-field-icon fui-lock" for="login-pass"></label>
+          </div>
+          
+          <!--  <a class="btn btn-primary btn-large btn-block" href="#">login</a>  -->
+          <button class="btn btn-primary btn-large btn-block" type="submit" id="submit">繳交</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+    
+</body>
+</html>
