@@ -19,7 +19,7 @@ class Scoring(object):
 		index = 0
 		for i in self.answer:
 			if self.stuAnswer[index] == i:
-				self.score+=.5
+				self.score+=5
 			index+=1
 		self._record()
 
@@ -41,7 +41,7 @@ def index(request):
 		stuAnswer = json.loads(data['answer'])
 		stuID = data['studentID']
 
-		scOB = Scoring('QandA/Answer.json', stuAnswer, stuID)
+		scOB = Scoring('QandA/Answer_for_examples.json', stuAnswer, stuID)
 		scOB.scoring()
 
 		return redirect('scoring:table')
