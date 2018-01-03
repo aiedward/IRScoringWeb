@@ -5,6 +5,7 @@ from django.views import generic
 from .forms import SubmitForm
 import json
 
+
 class Scoring(object):
 	"""docstring for scoring"""
 	def __init__(self, answerPath, stuAnswer, stuID):
@@ -18,7 +19,7 @@ class Scoring(object):
 		index = 0
 		for i in self.answer:
 			if self.stuAnswer[index] == i:
-				self.score+=5
+				self.score+=.5
 			index+=1
 		self._record()
 
@@ -27,6 +28,7 @@ class Scoring(object):
 
 	def getScore(self):
 		return self.score
+
 # for index page
 def index(request):
 	form = SubmitForm()
@@ -39,7 +41,7 @@ def index(request):
 		stuAnswer = json.loads(data['answer'])
 		stuID = data['studentID']
 
-		scOB = Scoring('answer.json', stuAnswer, stuID)
+		scOB = Scoring('QandA/Answer.json', stuAnswer, stuID)
 		scOB.scoring()
 
 		return redirect('scoring:table')
